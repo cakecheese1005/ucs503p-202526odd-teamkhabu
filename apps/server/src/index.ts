@@ -11,11 +11,25 @@ const app = express()
 
 app.use(helmet())
 app.use(morgan('dev'))
-
-// 🔐 Middleware
 app.use(cors())
 app.use(express.json())
 
+// 🚗 In-memory trips storage (dummy)
+interface Trip {
+  id: string
+  creatorId: string
+  start: string
+  destination: string
+  date: string
+  groupSize: number
+  members: string[]
+  isGirlsOnly: boolean
+  status: 'OPEN' | 'FULL' | 'CANCELLED'
+}
+
+let trips: Trip[] = []
+
+// ✅ Health check
 app.get('/', (req, res) => res.send('Backend is running!'))
 
 app.post('/search', (req, res) => {
@@ -25,6 +39,7 @@ app.post('/search', (req, res) => {
     return res.status(400).json({ error: 'start and end are required' })
   }
 
+  //@ts-ignore
   const results = data.filter((trip) => {
     return (
       trip.start.toLowerCase() === start.toLowerCase() &&
