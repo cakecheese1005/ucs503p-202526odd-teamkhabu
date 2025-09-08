@@ -35,14 +35,20 @@ router.post("/search", (req, res) => {
     return res.status(400).json({ error: "Start and destination are required" });
   }
 
-  let results = trips.filter(
-    (t) =>
-      t.start.toLowerCase() === start.toLowerCase() &&
-      t.destination.toLowerCase() === destination.toLowerCase() &&
-      t.status === "OPEN"
-  );
+  // Filter trips based on start, destination (including intermediate stops) and status
+  let results = trips.filter((t) =>
+  t.start.toLowerCase().includes(start.toLowerCase()) &&
+  (
+    t.destination.toLowerCase().includes(destination.toLowerCase()) ||
+    (t.intermediateStops?.some(stop =>
+      stop.toLowerCase().includes(destination.toLowerCase())
+    ) ?? false)
+  ) &&
+  t.status === "OPEN"
+);
 
-  // 📅 Date filter (optional, exact match OR ±1 day tolerance)
+
+  // 📅 Date filter (optional, ±1 day tolerance)
   if (date) {
     const searchDate = new Date(date);
 
@@ -51,7 +57,7 @@ router.post("/search", (req, res) => {
       const diffDays = Math.abs(
         (tripDate.getTime() - searchDate.getTime()) / (1000 * 60 * 60 * 24)
       );
-      return diffDays <= 1; // same day or within 1 day
+      return diffDays <= 1; // same day or ±1 day
     });
   }
 
