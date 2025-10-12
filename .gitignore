@@ -1,0 +1,10 @@
+# === Backend ===
+__pycache__/
+node_modules/
+
+# === Mobile ===
+.expo/
+.vscode/
+node_modules/
+
+
