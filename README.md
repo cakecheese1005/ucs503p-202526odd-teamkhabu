@@ -1,7 +1,10 @@
 DEPLOYED LINK:https://ucs503p-202526odd-teamkhabu.vercel.app/
+
+
 Youtube VIDEO:https://youtu.be/YH25fHVGqjI?si=1Jd4xIxkQYKInCy5
+
 QR :
-<img width="695" height="904" alt="image" src="https://github.com/user-attachments/assets/bd2cb15e-5230-4919-85a8-38b2f75877aa" />
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/bd2cb15e-5230-4919-85a8-38b2f75877aa" />
 
 
 Overview
@@ -20,7 +23,7 @@ Features:
 
 
 Project Structure
-<img width="774" height="764" alt="image" src="https://github.com/user-attachments/assets/895f0ea4-d1b4-400c-ad1e-d94e5f6e55b4" />
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/895f0ea4-d1b4-400c-ad1e-d94e5f6e55b4" />
 
 
 
