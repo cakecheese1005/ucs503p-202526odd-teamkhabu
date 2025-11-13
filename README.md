@@ -8,8 +8,9 @@ QR :
 
 
 Overview
+🚗
 RideShare is a full-stack ride-sharing platform for Thapar University.
-🚗 A Smart Carpooling & Group Ride System A web and mobile-based platform that enables students and commuters to find, create, and join ride groups safely and efficiently.
+A Smart Carpooling & Group Ride System that enables students and commuters to find, create, and join ride groups safely and efficiently.
 
 
 Features:
